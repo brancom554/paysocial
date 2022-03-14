@@ -1,0 +1,1 @@
+ALTER TABLE `products` CHANGE `prev_download` `prev_download` INT(10) UNSIGNED NOT NULL DEFAULT '0', CHANGE `last_download` `last_download` INT(10) UNSIGNED NOT NULL DEFAULT '0', CHANGE `prev_view` `prev_view` INT(10) UNSIGNED NOT NULL DEFAULT '0', CHANGE `last_view` `last_view` INT(10) UNSIGNED NOT NULL DEFAULT '0';
