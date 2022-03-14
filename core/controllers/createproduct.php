@@ -1,6 +1,7 @@
 <?php
     $this->loadLanguage('strings.php');
-
+    ini_set('memory_limit','256M');
+    ini_set('display_errors',E_ALL);
     if ($this->user->is_logged && $this->user->info->is_admin) {
 
         $the_sanitaze = new sanitize(); // init sanitaze
@@ -101,7 +102,6 @@
             $error = TRUE;
             $msgreturn = $this->lang('admin_products_error_image');
         }
-
         $thefile = '';
         if ($error == FALSE && $ptype == 2) {
             $folderfiles = $K->STORAGE_FILES_DIR;
@@ -118,7 +118,6 @@
 
             $plink = '';
         }
-
         if ($error == FALSE) {
             $db1->query("INSERT INTO products SET code='".$codeProduct."', idcategory=".$pcategory.", title='".$productname."', fileproduct='".$thefile."', linkproduct='".$plink."', imageproduct='".$theimage."', ikey='".$ikey."', type_product=".$ptype.", description='".$pdescription."', idsocialpay=".$socialpay.", created='".time()."'");
             $msgreturn = 'Ok.';
